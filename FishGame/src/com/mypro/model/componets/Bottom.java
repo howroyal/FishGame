@@ -13,7 +13,7 @@ public class Bottom extends Componet{
 	private Bitmap pic;
 	public Bottom(){
 		try{
-		pic = ImageManager.getImageMnagaer().getscaleImageByScreenFromAssets("componet/bottom.png");
+		pic = ImageManager.getInstance().getscaleImageByScreenFromAssets("componet/bottom.png");
 		this.setLayout_x(GamingInfo.getGamingInfo().getScreenWidth()/2-getPicWidth()/2);
 		this.setLayout_y(GamingInfo.getGamingInfo().getScreenHeight()-getPicHeight());
 		this.getPicMatrix().setTranslate(this.getLayout_x(),this.getLayout_y());

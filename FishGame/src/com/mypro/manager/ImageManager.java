@@ -23,15 +23,17 @@ import com.mypro.tools.LogTools;
  *
  */
 public class ImageManager {
-	private static ImageManager manager;
+	private static ImageManager instance;
 	private ImageManager(){
 		
 	}
-	public static ImageManager getImageMnagaer(){
-		if(manager == null){
-			manager = new ImageManager();
+	public static ImageManager getInstance(){
+		synchronized(instance){
+			if(instance == null){
+				instance = new ImageManager();
+			}
+			return instance;
 		}
-		return manager;
 	}
 	//Ëõ·Å±ÈÀı
 	public float scaleNum = 1;

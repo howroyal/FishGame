@@ -24,7 +24,7 @@ public class BottomGold extends Componet{
 	public BottomGold(int layoutX,int layoutY){
 		try {
 			initNum();
-			pic = ImageManager.getImageMnagaer().getscaleImageByScreenFromAssets("componet/bottom_gold.png");
+			pic = ImageManager.getInstance().getscaleImageByScreenFromAssets("componet/bottom_gold.png");
 			this.setLayout_x(layoutX);
 			this.setLayout_y(layoutY);
 			numShowX = layoutX+pic.getWidth()/3;
@@ -40,7 +40,7 @@ public class BottomGold extends Componet{
 	 * 初始化显示的数字
 	 */
 	private void initNum(){
-		HashMap<String,Bitmap> allNum = ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("componet/num_gold"),ImageManager.getImageMnagaer().scaleNum);
+		HashMap<String,Bitmap> allNum = ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("componet/num_gold"),ImageManager.getInstance().scaleNum);
 		//效果图全名(num_0.png)
 		StringBuffer numFullName = new StringBuffer();
 		String numName = "num_";

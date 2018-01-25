@@ -147,11 +147,11 @@ public class LayoutManager {
 			GamingInfo.getGamingInfo().setCannonLayoutY(bottom.getLayout_y()+bottom.getPicHeight()/2);
 			GamingInfo.getGamingInfo().getSurface().putDrawablePic(Constant.COMPONENTS_LAYER, bottom);		
 			//初始化提高大炮质量的按钮
-			ButtonAdapter upCannon = new ButtonAdapter(ImageManager.getImageMnagaer().getscaleImageByScreenFromAssets("cannon/add.png"),new UpCannonButtonListener());
+			ButtonAdapter upCannon = new ButtonAdapter(ImageManager.getInstance().getscaleImageByScreenFromAssets("cannon/add.png"),new UpCannonButtonListener());
 			addButton(upCannon,bottom.getLayout_x()+bottom.getPicWidth(),GamingInfo.getGamingInfo().getScreenHeight()-upCannon.getPicHeight());
 			GamingInfo.getGamingInfo().getSurface().putDrawablePic(Constant.COMPONENTS_LAYER, upCannon);	
 			//初始化降低大炮质量的按钮
-			ButtonAdapter downCannon = new ButtonAdapter(ImageManager.getImageMnagaer().getscaleImageByScreenFromAssets("cannon/sub.png"),new DownCannonButtonListener());
+			ButtonAdapter downCannon = new ButtonAdapter(ImageManager.getInstance().getscaleImageByScreenFromAssets("cannon/sub.png"),new DownCannonButtonListener());
 			addButton(downCannon,bottom.getLayout_x()-downCannon.getPicWidth(),GamingInfo.getGamingInfo().getScreenHeight()-downCannon.getPicHeight());
 			GamingInfo.getGamingInfo().getSurface().putDrawablePic(Constant.COMPONENTS_LAYER, downCannon);	
 			//初始化计分板

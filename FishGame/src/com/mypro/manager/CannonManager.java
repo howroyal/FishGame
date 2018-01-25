@@ -71,8 +71,8 @@ public class CannonManager {
 	public void init(){
 		try {
 			//获取配置文件指定的所有图片
-			HashMap<String,Bitmap> allImage = ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("cannon/bulletandnet"),ImageManager.getImageMnagaer().scaleNum);
-			allImage.putAll(ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("cannon/fire"),ImageManager.getImageMnagaer().scaleNum));
+			HashMap<String,Bitmap> allImage = ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("cannon/bulletandnet"),ImageManager.getInstance().scaleNum);
+			allImage.putAll(ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("cannon/fire"),ImageManager.getInstance().scaleNum));
 			//初始化金币数字
 			initGoldNum(allImage);
 			//初始化子弹
@@ -80,7 +80,7 @@ public class CannonManager {
 			//初始化渔网
 			initNet(allImage);
 			//初始化水波纹
-			initWaterRipple(ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("cannon/ripple"),ImageManager.getImageMnagaer().scaleNum));
+			initWaterRipple(ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("cannon/ripple"),ImageManager.getInstance().scaleNum));
 			//初始化大炮
 			initCannon(allImage);
 			//初始化激光
@@ -128,7 +128,7 @@ public class CannonManager {
 	 * 初始化更换大炮的效果图
 	 */
 	private void initChangeCannonEffect(){
-		HashMap<String,Bitmap> allEffect = ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("cannon/changefire"),ImageManager.getImageMnagaer().scaleNum);
+		HashMap<String,Bitmap> allEffect = ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("cannon/changefire"),ImageManager.getInstance().scaleNum);
 		//效果图全名(paolizi_08.png)
 		StringBuffer effectFullName = new StringBuffer();
 		//定义名字编号

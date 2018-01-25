@@ -31,8 +31,8 @@ public class ParticleEffectManager {
 	
 	private ParticleEffectManager(){
 		try {
-			startParticleImg = ImageManager.getImageMnagaer().getscaleImageByScreenFromAssets("cannon/stars.png");
-			goldStartParticleImg = ImageManager.getImageMnagaer().getscaleImageByScreenFromAssets("cannon/tenstar.png");
+			startParticleImg = ImageManager.getInstance().getscaleImageByScreenFromAssets("cannon/stars.png");
+			goldStartParticleImg = ImageManager.getInstance().getscaleImageByScreenFromAssets("cannon/tenstar.png");
 			createColorfulParticleImgs();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -296,11 +296,11 @@ public class ScoreManager {
 		try {
 			
 			//初始化金币
-			initGold(ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("score/goldItem"),ImageManager.getImageMnagaer().scaleNum));
+			initGold(ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("score/goldItem"),ImageManager.getInstance().scaleNum));
 			//初始化高分
-			initHighPoint(ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("score/highPoint"),ImageManager.getImageMnagaer().scaleNum));
+			initHighPoint(ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("score/highPoint"),ImageManager.getInstance().scaleNum));
 			//初始化百分
-			initHundredPoint(ImageManager.getImageMnagaer().getImagesMapByImageConfig(ImageManager.getImageMnagaer().createImageConfigByPlist("score/hundred"),ImageManager.getImageMnagaer().scaleNum));
+			initHundredPoint(ImageManager.getInstance().getImagesMapByImageConfig(ImageManager.getInstance().createImageConfigByPlist("score/hundred"),ImageManager.getInstance().scaleNum));
 		} catch (Exception e) {
 			LogTools.doLogForException(e);
 		}
@@ -329,7 +329,7 @@ public class ScoreManager {
 		//将集合转换为数组
 		gold = new Bitmap[allGoldList.size()];
 		for(int i =0;i<allGoldList.size();i++){
-			gold[i] = ImageManager.getImageMnagaer().rotateImage(90, allGoldList.get(i));
+			gold[i] = ImageManager.getInstance().rotateImage(90, allGoldList.get(i));
 		}
 	}
 	/**

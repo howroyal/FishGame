@@ -29,7 +29,7 @@ public class GameInitManager {
 		return manager;
 	}
 	public void init(){
-		ImageManager.getImageMnagaer().initManager();
+		ImageManager.getInstance().initManager();
 		initProgress();
 		initGame();//³õÊ¼»¯ÓÎÏ·
     	try {

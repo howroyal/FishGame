@@ -48,9 +48,9 @@ public class LoadProgress extends DrawableAdapter{
 	private int currentProgress;
 	private LoadProgress(){
 		try{
-			while((this.loadProgress = ImageManager.getImageMnagaer().getBitmapByAssets("progress/login_bg.png"))==null);
-			while((this.load = ImageManager.getImageMnagaer().getBitmapByAssets("progress/login_jd.png"))==null);
-			while((this.progressBg = ImageManager.getImageMnagaer().sacleImageByWidthAndHeight(ImageManager.getImageMnagaer().getBitmapByAssets("progress/progress_bg.jpg"), GamingInfo.getGamingInfo().getScreenWidth(), GamingInfo.getGamingInfo().getScreenHeight()))==null);
+			while((this.loadProgress = ImageManager.getInstance().getBitmapByAssets("progress/login_bg.png"))==null);
+			while((this.load = ImageManager.getInstance().getBitmapByAssets("progress/login_jd.png"))==null);
+			while((this.progressBg = ImageManager.getInstance().sacleImageByWidthAndHeight(ImageManager.getInstance().getBitmapByAssets("progress/progress_bg.jpg"), GamingInfo.getGamingInfo().getScreenWidth(), GamingInfo.getGamingInfo().getScreenHeight()))==null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -101,7 +101,7 @@ public class LoadProgress extends DrawableAdapter{
 				}
 			}
 			g.drawImage(flag.getImage(), load_x,load_y, null);
-			currentLoad = ImageManager.getImageMnagaer().scaleImageByScreen(currentLoadFlag);	
+			currentLoad = ImageManager.getInstance().scaleImageByScreen(currentLoadFlag);	
 		}catch(Exception e){
 			LogTools.doLogForException(e);
 			e.printStackTrace();

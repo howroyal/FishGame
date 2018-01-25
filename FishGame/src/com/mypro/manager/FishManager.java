@@ -149,7 +149,7 @@ public class FishManager {
 		allFishCatchActs = fishCatchAct;
 		this.createable = true;
 		//解析完所有的鱼以后，清理一下缓存
-		ImageManager.getImageMnagaer().clearImageCache();
+		ImageManager.getInstance().clearImageCache();
 	}
 	/**
 	 * 获取所有鱼的名字
@@ -253,10 +253,10 @@ public class FishManager {
 	 */
 	private Bitmap[] getFishActByFishName(String fishName){
 		if(allFishActs.get(fishName)==null){
-			Bitmap []acts = ImageManager.getImageMnagaer().getImagesByActConfigs(allFishActConfigs.get(fishName),ImageManager.getImageMnagaer().fishScaleNum);
+			Bitmap []acts = ImageManager.getInstance().getImagesByActConfigs(allFishActConfigs.get(fishName),ImageManager.getInstance().fishScaleNum);
 			//将所有的图都旋转180度，因为程序设计是基于头冲右的
 			for(int i =0;i<acts.length;i++){
-				acts[i] = ImageManager.getImageMnagaer().rotateImage(180, acts[i]);
+				acts[i] = ImageManager.getInstance().rotateImage(180, acts[i]);
 			}
 			return acts;
 			
@@ -272,10 +272,10 @@ public class FishManager {
 	 */
 	private Bitmap[] getFishCatchActsByFishName(String fishName){
 		if(allFishCatchActs.get(fishName)==null){
-			Bitmap []acts = ImageManager.getImageMnagaer().getImagesByActConfigs(allFishCatchActConfigs.get(fishName),ImageManager.getImageMnagaer().fishScaleNum);
+			Bitmap []acts = ImageManager.getInstance().getImagesByActConfigs(allFishCatchActConfigs.get(fishName),ImageManager.getInstance().fishScaleNum);
 			//将所有的图都旋转180度，因为程序设计是基于头冲右的
 			for(int i =0;i<acts.length;i++){
-				acts[i] = ImageManager.getImageMnagaer().rotateImage(180, acts[i]);
+				acts[i] = ImageManager.getInstance().rotateImage(180, acts[i]);
 			}
 			return acts;
 		}else{
@@ -339,7 +339,7 @@ public class FishManager {
 				throw new Exception("FishManager:读取配置文件出错，没有找到fishActConfig信息");
 			}
 			for(String actConfig : fishActConfiges){
-				configs.putAll(ImageManager.getImageMnagaer().createImageConfigByPlist(actConfig).getAllActs());
+				configs.putAll(ImageManager.getInstance().createImageConfigByPlist(actConfig).getAllActs());
 			}
 		}catch(Exception e){
 			e.printStackTrace();

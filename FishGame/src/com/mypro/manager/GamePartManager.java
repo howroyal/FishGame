@@ -125,7 +125,7 @@ public class GamePartManager {
 			if(background==null){
 				background = new BackGround();
 				try {
-					background.setCurrentPic(ImageManager.getImageMnagaer().sacleImageByWidthAndHeight(ImageManager.getImageMnagaer().getBitmapByAssets(this.part.getBackground()), GamingInfo.getGamingInfo().getScreenWidth(), GamingInfo.getGamingInfo().getScreenHeight()));				
+					background.setCurrentPic(ImageManager.getInstance().sacleImageByWidthAndHeight(ImageManager.getInstance().getBitmapByAssets(this.part.getBackground()), GamingInfo.getGamingInfo().getScreenWidth(), GamingInfo.getGamingInfo().getScreenHeight()));				
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					LogTools.doLogForException(e);
@@ -133,7 +133,7 @@ public class GamePartManager {
 				GamingInfo.getGamingInfo().getSurface().putDrawablePic(Constant.BACK_GROUND_LAYER, background);
 			}else{
 				try {
-					background.setCurrentPic(Bitmap.createScaledBitmap(ImageManager.getImageMnagaer().getBitmapByAssets(this.part.getBackground()), GamingInfo.getGamingInfo().getScreenWidth(), GamingInfo.getGamingInfo().getScreenHeight(), false));				
+					background.setCurrentPic(Bitmap.createScaledBitmap(ImageManager.getInstance().getBitmapByAssets(this.part.getBackground()), GamingInfo.getGamingInfo().getScreenWidth(), GamingInfo.getGamingInfo().getScreenHeight(), false));				
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					LogTools.doLogForException(e);
